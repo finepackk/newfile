@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Dilly Mayadunne — Hospitality + Marketing Operator in Melbourne. Building brands, building systems, building money." />
+  <title>Dilly Mayadunne — Personal Page</title>
+  <style>
+    :root{
+      --bg: #070A12;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --line: rgba(255,255,255,.14);
+      --accent: #FFD36A;
+      --accent2: #6AE4FF;
+      --good: #7CFFB2;
+      --warn: #FFB26A;
+      --shadow: 0 18px 70px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 26px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 14% 18%, rgba(255,211,106,.20), transparent 60%),
+        radial-gradient(700px 520px at 82% 24%, rgba(106,228,255,.16), transparent 55%),
+        radial-gradient(900px 700px at 70% 86%, rgba(124,255,178,.09), transparent 60%),
+        linear-gradient(180deg, #050713, #070A12 40%, #06070F);
+      overflow-x:hidden;
+    }
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); }
+    .wrap{ max-width: 1120px; margin: 0 auto; padding: 28px 18px 64px; }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; position: sticky; top:0; z-index: 10;
+      padding: 14px 0;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(7,10,18,.85), rgba(7,10,18,.55));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      user-select:none;
+    }
+    .logo{
+      width: 40px; height: 40px; border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255,211,106,.95), rgba(106,228,255,.8));
+      box-shadow: 0 14px 40px rgba(0,0,0,.55);
+      position: relative;
+      overflow:hidden;
+    }
+    .logo::after{
+      content:"";
+      position:absolute; inset:-20%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.65), transparent 55%);
+      transform: rotate(20deg);
+    }
+    .brand h1{
+      margin:0; font-size: 14px; letter-spacing:.08em; text-transform: uppercase;
+      color: rgba(255,255,255,.88);
+    }
+    .brand .sub{
+      font-size: 12px; color: var(--muted);
+      margin-top: 2px;
+    }
+    nav{
+      display:flex; gap:14px; flex-wrap: wrap; justify-content:flex-end;
+      font-size: 13px;
+    }
+    nav a{
+      padding: 8px 10px; border-radius: 12px;
+      border: 1px solid transparent;
+      color: rgba(255,255,255,.78);
+    }
+    nav a:hover{
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      text-decoration:none;
+    }
+
+    .hero{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{ padding: 26px; position: relative; overflow:hidden; }
+    .hero-main::before{
+      content:"";
+      position:absolute; inset:-35%;
+      background:
+        radial-gradient(circle at 22% 28%, rgba(255,211,106,.30), transparent 55%),
+        radial-gradient(circle at 78% 32%, rgba(106,228,255,.22), transparent 58%);
+      filter: blur(2px);
+      transform: rotate(-8deg);
+      opacity: .85;
+      pointer-events:none;
+    }
+    .hero-main > *{ position: relative; }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(255,255,255,.78);
+    }
+    .dot{
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--good);
+      box-shadow: 0 0 0 4px rgba(124,255,178,.10);
+    }
+    .title{
+      margin: 14px 0 10px;
+      font-size: 44px;
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+    }
+    @media (max-width: 520px){ .title{ font-size: 36px; } }
+    .title .accent{ color: var(--accent); }
+    .lead{
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.74);
+      font-size: 15.5px;
+      line-height: 1.6;
+      max-width: 64ch;
+    }
+    .cta-row{
+      display:flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      color: rgba(255,255,255,.88);
+      font-size: 13px;
+      cursor: pointer;
+      user-select:none;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover{ text-decoration:none; background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.18); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.primary{
+      border-color: rgba(255,211,106,.32);
+      background: linear-gradient(135deg, rgba(255,211,106,.25), rgba(106,228,255,.12));
+    }
+    .chip-row{
+      display:flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 16px;
+    }
+    .chip{
+      font-size: 12px;
+      color: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .hero-side{ padding: 18px; display:flex; flex-direction:column; gap: 12px; }
+    .stat{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      padding: 14px;
+    }
+    .stat .label{ font-size: 12px; color: var(--muted); }
+    .stat .value{
+      margin-top: 6px;
+      font-size: 16px;
+      color: rgba(255,255,255,.9);
+      line-height: 1.25;
+    }
+    .meter{
+      height: 10px; border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      margin-top: 10px;
+      overflow:hidden;
+    }
+    .meter > i{
+      display:block; height:100%;
+      width: 72%;
+      background: linear-gradient(90deg, rgba(255,211,106,.85), rgba(106,228,255,.75));
+      border-radius: 999px;
+    }
+
+    section{ margin-top: 18px; }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .col-7{ grid-column: span 7; }
+    .col-5{ grid-column: span 5; }
+    .col-6{ grid-column: span 6; }
+    .col-4{ grid-column: span 4; }
+    .col-12{ grid-column: span 12; }
+    @media (max-width: 920px){
+      .col-7,.col-5,.col-6,.col-4{ grid-column: span 12; }
+    }
+    .panel{ padding: 18px; border-radius: var(--radius2); }
+    .panel h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: .01em;
+    }
+    .panel p{
+      margin: 0 0 10px;
+      color: rgba(255,255,255,.74);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .list{
+      margin: 10px 0 0;
+      padding: 0; list-style: none;
+      display:flex; flex-direction:column; gap: 10px;
+    }
+    .li{
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+    }
+    .li .top{
+      display:flex; align-items:center; justify-content:space-between; gap: 10px;
+    }
+    .li .name{ font-size: 14px; color: rgba(255,255,255,.9); }
+    .tag{
+      font-size: 11px; padding: 6px 9px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.04);
+      white-space: nowrap;
+    }
+    .li .desc{ margin-top: 8px; color: rgba(255,255,255,.70); font-size: 13px; line-height: 1.55; }
+    .mini{
+      display:flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 10px;
+    }
+    .mini .pill{
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 6px 8px;
+      border-radius: 999px;
+    }
+
+    .quote{
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,.18);
+      background: rgba(0,0,0,.14);
+      color: rgba(255,255,255,.76);
+      line-height: 1.6;
+      font-size: 13.5px;
+    }
+    .quote b{ color: rgba(255,255,255,.92); }
+
+    footer{
+      margin-top: 22px;
+      padding: 18px 0 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.58);
+      font-size: 12px;
+      display:flex; flex-wrap:wrap; gap: 10px;
+      align-items:center; justify-content: space-between;
+    }
+    .right{ display:flex; gap: 10px; flex-wrap: wrap; justify-content:flex-end; }
+    .kbd{
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 7px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.72);
+    }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      max-width: 920px;
+      width: calc(100% - 24px);
+      background: rgba(8,10,18,.78);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      padding: 12px 14px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.62);
+      backdrop-filter: blur(12px);
+      display:none;
+      z-index: 50;
+      color: rgba(255,255,255,.86);
+      font-size: 13px;
+    }
+    .toast.show{ display:flex; align-items:center; justify-content:space-between; gap: 10px; }
+    .toast small{ color: rgba(255,255,255,.65); display:block; margin-top: 2px; }
+    .toast button{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.86);
+      padding: 8px 10px;
+      border-radius: 12px;
+      cursor:pointer;
+    }
+    .toast button:hover{ background: rgba(255,255,255,.09); }
+
+    /* Print-friendly resume mode */
+    @media print{
+      body{ background: #fff; color:#111; }
+      .topbar, .toast, .btn, nav{ display:none !important; }
+      .card{ box-shadow:none; border-color:#ddd; background:#fff; }
+      .panel, .stat, .li, .quote{ background:#fff; border-color:#ddd; }
+      a{ text-decoration:none; color:#111; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Dilly Mayadunne</h1>
+          <div class="sub">Melbourne • Hospitality + Marketing Operator</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#projects">Projects</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="card hero-main">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Building brands. Building systems. Building leverage.</div>
+          <h2 class="title">
+            I’m <span class="accent">Dilly</span> — I don’t “hope” for a future.
+            <br/>I <span class="accent">engineer</span> it.
+          </h2>
+          <p class="lead">
+            Sri Lankan-born, Australia-based. Studying <b>Bachelor of Business (Hotel Management)</b> while working hospitality shifts
+            and stacking real-world skills in <b>marketing, sales, short-form content, and AI tools</b>.
+            I’m playing the long game: clean reputation, strong network, aggressive execution.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#contact" title="Jump to contact">📩 Contact</a>
+            <button class="btn" id="copyBioBtn" type="button" title="Copy a short bio">🧠 Copy bio</button>
+            <button class="btn" id="resumeBtn" type="button" title="Print / Save as PDF">🖨️ Save as PDF</button>
+          </div>
+
+          <div class="chip-row" aria-label="Highlights">
+            <span class="chip">Hospitality Ops</span>
+            <span class="chip">Content + Ads</span>
+            <span class="chip">Sales Fundamentals</span>
+            <span class="chip">AI Workflow Builder</span>
+            <span class="chip">Community Leadership</span>
+          </div>
+        </div>
+
+        <aside class="card hero-side" aria-label="Quick facts">
+          <div class="stat">
+            <div class="label">Base</div>
+            <div class="value">Melbourne, Australia<br><span style="color:var(--muted);font-size:12px;">(student visa — aiming for long-term pathway)</span></div>
+          </div>
+          <div class="stat">
+            <div class="label">Education</div>
+            <div class="value">Bachelor of Business<br>Hotel Management</div>
+          </div>
+          <div class="stat">
+            <div class="label">Current mission</div>
+            <div class="value">Become financially dangerous (the legal way). Build a real name. Help family. Win.</div>
+            <div class="meter" title="Momentum"><i></i></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid" id="about">
+        <div class="card panel col-7">
+          <h2>About</h2>
+          <p>
+            I’m a hospitality student and operator who’s obsessed with execution. I like simple, high-impact systems:
+            sell results, build trust, ship content, and keep improving the machine.
+          </p>
+          <p>
+            I’m balancing work, studies, and business projects — from packaging industry roots to digital-first personal branding
+            and marketing services. I value discipline, speed, and quality. No fluff.
+          </p>
+          <div class="quote">
+            <b>Philosophy:</b> Build skills that print money, stay fit, stay sharp, stay consistent.
+            <small>Translation: results talk. Excuses don’t.</small>
+          </div>
+        </div>
+
+        <div class="card panel col-5">
+          <h2>Signature strengths</h2>
+          <ul class="list">
+            <li class="li">
+              <div class="top">
+                <div class="name">Hospitality operations mindset</div>
+                <span class="tag">service + systems</span>
+              </div>
+              <div class="desc">Understanding customer experience, team flow, and consistency under pressure.</div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">Marketing + short-form content</div>
+                <span class="tag">attention → leads</span>
+              </div>
+              <div class="desc">Clear hooks, clean visuals, direct messaging. Built for Gen Z distribution.</div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">Community leadership</div>
+                <span class="tag">network + impact</span>
+              </div>
+              <div class="desc">Lions Club experience planning, organizing, and communicating for projects/events.</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid" id="focus">
+        <div class="card panel col-6">
+          <h2>What I’m focused on right now</h2>
+          <ul class="list">
+            <li class="li">
+              <div class="top">
+                <div class="name">Sales + marketing mastery</div>
+                <span class="tag">high ROI skill</span>
+              </div>
+              <div class="desc">Learning to sell outcomes, handle objections, and build pipelines consistently.</div>
+              <div class="mini">
+                <span class="pill">cold outreach</span>
+                <span class="pill">offers</span>
+                <span class="pill">pricing</span>
+                <span class="pill">follow-up</span>
+              </div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">AI workflows for content & ops</div>
+                <span class="tag">leverage</span>
+              </div>
+              <div class="desc">Using AI tools to speed up content production, admin tasks, and business workflows.</div>
+              <div class="mini">
+                <span class="pill">prompts</span>
+                <span class="pill">templates</span>
+                <span class="pill">automation</span>
+              </div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">Fitness + discipline</div>
+                <span class="tag">energy</span>
+              </div>
+              <div class="desc">Because if your body is weak, your business will be weak. Period.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card panel col-6">
+          <h2>What I can help with</h2>
+          <p>
+            If you’re a business owner or club/organization: I can help you with clear messaging and better presentation.
+            I like practical work that makes money or makes impact — ideally both.
+          </p>
+          <ul class="list">
+            <li class="li">
+              <div class="top">
+                <div class="name">Short-form content strategy</div>
+                <span class="tag">TikTok / IG</span>
+              </div>
+              <div class="desc">Hooks, scripts, shot lists, and a weekly plan you can actually follow.</div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">Simple landing pages & offers</div>
+                <span class="tag">conversion</span>
+              </div>
+              <div class="desc">One clear promise. One clear CTA. No cringe. No clutter.</div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">Event / project comms</div>
+                <span class="tag">docs + design</span>
+              </div>
+              <div class="desc">Letters, agendas, posters, and structured updates that look professional.</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid" id="projects">
+        <div class="card panel col-12">
+          <h2>Projects & ventures (current + building)</h2>
+          <ul class="list">
+            <li class="li">
+              <div class="top">
+                <div class="name">Fine Pack Care (family packaging business)</div>
+                <span class="tag">corrugated packaging</span>
+              </div>
+              <div class="desc">
+                Sri Lanka-based roots. Exploring digital-first branding, better sales messaging, and modern presentation for packaging products
+                (cartons, pizza boxes, shoe boxes, etc.).
+              </div>
+              <div class="mini">
+                <span class="pill">brand cleanup</span>
+                <span class="pill">quoting</span>
+                <span class="pill">B2B sales</span>
+              </div>
+            </li>
+
+            <li class="li">
+              <div class="top">
+                <div class="name">DilusGuides (personal brand)</div>
+                <span class="tag">motivational content</span>
+              </div>
+              <div class="desc">
+                Content aimed at helping young people avoid mistakes and build better habits. Clean, simple, eye-catching.
+              </div>
+              <div class="mini">
+                <span class="pill">short-form</span>
+                <span class="pill">storytelling</span>
+                <span class="pill">discipline</span>
+              </div>
+            </li>
+
+            <li class="li">
+              <div class="top">
+                <div class="name">Marketing / content services (in progress)</div>
+                <span class="tag">cashflow skill</span>
+              </div>
+              <div class="desc">
+                Building a service offer around content creation + marketing systems, targeting practical niches (home renovation / hospitality / local operators).
+              </div>
+              <div class="mini">
+                <span class="pill">offers</span>
+                <span class="pill">outreach</span>
+                <span class="pill">retainers</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid" id="leadership">
+        <div class="card panel col-7">
+          <h2>Leadership & community</h2>
+          <p>
+            I’ve been active in Lions Club work — planning projects, communications, agendas, and supporting service initiatives.
+            I respect structure and protocol, and I also respect results.
+          </p>
+          <ul class="list">
+            <li class="li">
+              <div class="top">
+                <div class="name">Lions Club involvement</div>
+                <span class="tag">service + leadership</span>
+              </div>
+              <div class="desc">Event agendas, invitations, donation letters, project updates, and coordination.</div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">Business & networking mindset</div>
+                <span class="tag">relationships</span>
+              </div>
+              <div class="desc">I build connections like assets: respectfully, consistently, and long-term.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card panel col-5">
+          <h2>Operator rules</h2>
+          <ul class="list">
+            <li class="li">
+              <div class="top">
+                <div class="name">Simple beats complex</div>
+                <span class="tag">execution</span>
+              </div>
+              <div class="desc">If it’s not repeatable, it’s not real.</div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">Discipline is a competitive advantage</div>
+                <span class="tag">daily</span>
+              </div>
+              <div class="desc">Sleep, gym, work, study, build — no drama.</div>
+            </li>
+            <li class="li">
+              <div class="top">
+                <div class="name">Reputation is currency</div>
+                <span class="tag">trust</span>
+              </div>
+              <div class="desc">Move clean. Deliver. Don’t talk — show.</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid" id="contact">
+        <div class="card panel col-12">
+          <h2>Contact</h2>
+          <p>
+            Want to collaborate? Keep it simple: what you do, what you need, and what success looks like.
+          </p>
+
+          <div class="grid">
+            <div class="col-6">
+              <div class="li">
+                <div class="top">
+                  <div class="name">Email</div>
+                  <span class="tag">add yours</span>
+                </div>
+                <div class="desc">
+                  <span style="color:var(--muted);">Replace this with your real email in the HTML:</span><br/>
+                  <span style="font-family:var(--mono);">yourname@email.com</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="li">
+                <div class="top">
+                  <div class="name">Social</div>
+                  <span class="tag">add links</span>
+                </div>
+                <div class="desc">
+                  <span style="color:var(--muted);">Put your links here:</span><br/>
+                  <span style="font-family:var(--mono);">Instagram: @DilusGuides</span><br/>
+                  <span style="font-family:var(--mono);">TikTok: (add handle)</span><br/>
+                  <span style="font-family:var(--mono);">LinkedIn: (add link)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="quote">
+                <b>Quick note:</b> This page is built from what I already know about you.
+                If you want me to tighten it up, tell me:
+                <span class="kbd">your exact name</span>,
+                <span class="kbd">best email</span>,
+                <span class="kbd">top 3 services</span>,
+                and <span class="kbd">1 proof</span> (results / work samples / experience).
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <span id="year"></span> Dilly Mayadunne • Built as a single-file page</div>
+        <div class="right">
+          <span class="kbd">Tip: Ctrl/⌘ + P</span>
+          <a class="kbd" href="#top">Back to top</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div>
+      <div id="toastTitle" style="font-weight:600;">Copied</div>
+      <small id="toastMsg">Done.</small>
+    </div>
+    <button type="button" id="toastClose">Close</button>
+  </div>
+
+  <script>
+    // Tiny helper: toast
+    const toast = document.getElementById('toast');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMsg = document.getElementById('toastMsg');
+    const toastClose = document.getElementById('toastClose');
+
+    function showToast(title, msg){
+      toastTitle.textContent = title;
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+    toastClose.addEventListener('click', () => toast.classList.remove('show'));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy bio
+    const copyBioBtn = document.getElementById('copyBioBtn');
+    copyBioBtn.addEventListener('click', async () => {
+      const bio =
+`Dilly Mayadunne — Melbourne-based hospitality + marketing operator. Studying Bachelor of Business (Hotel Management) while building skills in sales, short-form content, and AI workflows. Focused on execution, discipline, and long-term leverage.`;
+      try{
+        await navigator.clipboard.writeText(bio);
+        showToast('Bio copied', 'Paste it into Instagram / LinkedIn / emails.');
+      }catch(e){
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = bio;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        showToast('Bio copied', 'Clipboard fallback used.');
+      }
+    });
+
+    // Print / Save as PDF
+    document.getElementById('resumeBtn').addEventListener('click', () => {
+      showToast('Save as PDF', 'Use your browser print dialog → “Save as PDF”.');
+      window.print();
+    });
+
+    // Smooth scroll (nice touch)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, '', id);
+      });
+    });
+  </script>
+</body>
+</html>
